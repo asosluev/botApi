@@ -16,6 +16,7 @@ Hello ${ctx.message.from.first_name}!
     ]).resize()
 
 
+
 ));
 
 bot.help((ctx) => ctx.reply(COUNTRIES_LIST));
@@ -31,14 +32,13 @@ bot.on('text', async(ctx) => {
 Случаи: ${data[0][0].cases}
 Смерти: ${data[0][0].deaths}
 Вылечились: ${data[0][0].recovered}
-    `
-        ctx.reply(formatData)
+    `;
+        ctx.reply(formatData);
     } catch {
         console.log("Erorr");
         ctx.reply("Такой страны не существует!!!")
     }
 });
 
-bot.hears('hi', (ctx) => ctx.reply('Hey there'))
 bot.launch()
 console.log('Бот запущен')
